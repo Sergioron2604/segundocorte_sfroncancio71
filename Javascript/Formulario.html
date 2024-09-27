@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Correos Electrónicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            width: 100%;
+            max-width: 600px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .invalid-container {
+            color: red;
+            font-weight: bold;
+            border: 1px solid red;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Validación de Correos Electrónicos</h2>
+    <form id="emailForm">
+        <label for="emails">Ingresa correos electrónicos separados por punto y coma (;) o coma (,):</label>
+        <textarea id="emails" placeholder="correo1@ejemplo.com;correo2@ejemplo.com"></textarea>
+        <button type="submit">Validar</button>
+        <div id="invalidEmailsContainer" class="invalid-container" style="display:none;"></div>
+    </form>
+
+    <script>
+        // Función flecha para validar correos electrónicos
+        const validarCorreos = (emails) => {
+            // Expresión regular para validar correos (sin nombres)
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let validEmails = [];
+            let invalidEmails = [];
+
+            // Separar por comas o punto y coma
+            emails.split(/[;,]/).forEach(item => {
+                // Remover espacios en blanco y extraer solo el correo entre los <>
+                let email = item.match(/<([^>]+)>/) ? item.match(/<([^>]+)>/)[1] : item.trim();
+
+                // Validar correo con la expresión regular
+                if (regex.test(email)) {
+                    validEmails.push(email);
+                } else {
+                    invalidEmails.push(item.trim());
+                }
+            });
+
+            // Retornar los correos válidos e inválidos
+            return { validEmails, invalidEmails };
+        };
+
+        // Evento para validar los correos al enviar el formulario
+        document.getElementById('emailForm').addEventListener('submit', (e) => {
+            e.preventDefault(); // Evitar el envío del formulario
+
+            // Obtener los valores del textarea
+            const emails = document.getElementById('emails').value;
+            const invalidEmailsContainer = document.getElementById('invalidEmailsContainer');
+
+            // Llamar a la función flecha para validar los correos
+            const { validEmails, invalidEmails } = validarCorreos(emails);
+
+            // Mostrar los correos válidos separados por punto y coma
+            document.getElementById('emails').value = validEmails.join('; ');
+
+            // Mostrar correos inválidos en un div debajo del formulario
+            if (invalidEmails.length > 0) {
+                invalidEmailsContainer.style.display = 'block';
+                invalidEmailsContainer.textContent = `Correos inválidos: ${invalidEmails.join(', ')}`;
+            } else {
+                invalidEmailsContainer.style.display = 'none'; // Ocultar si no hay correos inválidos
+            }
+        });
+    </script>
+</body>
+</html>
