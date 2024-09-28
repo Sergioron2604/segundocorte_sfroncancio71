@@ -23,27 +23,30 @@ header {
 nav {
     background-color: #fff; /* Color de fondo del menú */
     padding: 10px 20px; /* Espaciado del menú */
+    display: flex;
+    justify-content: space-between; /* Espacia el contenido */
+    align-items: center; /* Alinea verticalmente */
 }
 
-nav ul {
+.nav-list {
     list-style: none; /* Quita los puntos de la lista */
     padding: 0; /* Quita el padding de la lista */
     display: flex; /* Usa flexbox para alinear los elementos */
 }
 
-nav ul li {
+.nav-list li {
     position: relative; /* Posicionamiento relativo para el menú desplegable */
     margin-right: 20px; /* Espaciado entre elementos */
 }
 
-nav ul li a {
+.nav-list li a {
     text-decoration: none; /* Quita el subrayado de los enlaces */
     color: #333; /* Color de texto por defecto */
     padding: 8px 15px; /* Espaciado interno */
     transition: color 0.3s; /* Transición suave para el cambio de color */
 }
 
-nav ul li a:hover {
+.nav-list li a:hover {
     color: #4caf50; /* Color verde al pasar el cursor */
 }
 
@@ -72,8 +75,44 @@ nav ul li a:hover {
     color: #4caf50; /* Color verde al pasar el cursor sobre los elementos del menú desplegable */
 }
 
-nav ul li:hover .dropdown-menu {
-    display: block; /* Muestra el menú desplegable al pasar el cursor */
+.menu-toggle {
+    display: none; /* Oculta el botón del menú hamburguesa en dispositivos grandes */
+    flex-direction: column; /* Alinea las barras verticalmente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.menu-toggle .bar {
+    height: 3px; /* Altura de las barras */
+    width: 25px; /* Ancho de las barras */
+    background-color: #333; /* Color de las barras */
+    margin: 4px 0; /* Espaciado entre las barras */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Oculta la lista de navegación por defecto */
+        flex-direction: column; /* Alinea los elementos verticalmente */
+        width: 100%; /* Ancho completo */
+        position: absolute; /* Posiciona el menú en relación a la navegación */
+        background-color: #fff; /* Color de fondo del menú desplegable */
+        top: 60px; /* Coloca el menú debajo del menú hamburguesa */
+        left: 0; /* Alinea el menú a la izquierda */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del menú desplegable */
+    }
+
+    .nav-list.active {
+        display: flex; /* Muestra la lista de navegación cuando está activa */
+    }
+
+    .nav-list li {
+        margin: 10px 0; /* Espaciado entre elementos */
+        text-align: center; /* Centra el texto */
+    }
+
+    .menu-toggle {
+        display: flex; /* Muestra el botón del menú hamburguesa en dispositivos pequeños */
+    }
 }
 
 

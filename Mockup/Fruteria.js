@@ -15,8 +15,41 @@ function filterProducts(category) {
         } else {
             product.style.display = 'none'; // Ocultar producto
         }
-
-        
     });
-    
 }
+
+// Funcionalidad del menú hamburguesa
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+
+// Mostrar y ocultar el menú al hacer clic en el botón del menú hamburguesa
+mobileMenu.addEventListener('click', () => {
+    navList.classList.toggle('active'); // Alterna la clase activa para mostrar/ocultar el menú
+});
+
+// Cierra el menú si se hace clic en cualquier parte del documento
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('nav')) {
+        navList.classList.remove('active'); // Cierra el menú si se hace clic fuera de él
+    }
+});
+
+// Mostrar u ocultar el menú desplegable al hacer clic en "Páginas"
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+if (dropdownToggle) {
+    dropdownToggle.addEventListener('click', (event) => {
+        event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+        dropdownMenu.classList.toggle('active'); // Alterna la visibilidad del menú desplegable
+    });
+}
+
+// Cierra el menú desplegable si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.dropdown-toggle') && !event.target.closest('.dropdown-menu')) {
+        dropdownMenu.classList.remove('active'); // Cierra el menú desplegable si se hace clic fuera de él
+    }
+});
+
+
