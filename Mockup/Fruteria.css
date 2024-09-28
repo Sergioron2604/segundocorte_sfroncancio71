@@ -51,54 +51,58 @@ nav {
 }
 
 .dropdown-menu {
-    display: none; /* Oculta el menú desplegable por defecto */
-    position: absolute; /* Posiciona el menú desplegable */
-    top: 100%; /* Coloca el menú justo debajo del enlace */
-    left: 0; /* Alinea el menú a la izquierda */
-    background-color: #fff; /* Color de fondo del menú desplegable */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del menú desplegable */
-    border-radius: 5px; /* Bordes redondeados del menú desplegable */
-    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    background-color: #fff; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; 
+    z-index: 1000; 
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; 
 }
 
 .dropdown-menu li {
-    margin: 0; /* Quita el margen */
+    margin: 0; 
 }
 
 .dropdown-menu li a {
-    color: #333; /* Color de texto de los elementos del menú desplegable */
-    padding: 10px 15px; /* Espaciado interno de los elementos del menú desplegable */
-    display: block; /* Hace que el área clickeable sea más grande */
+    color: #333; 
+    padding: 10px 15px; 
+    display: block; 
 }
 
 .dropdown-menu li a:hover {
-    color: #4caf50; /* Color verde al pasar el cursor sobre los elementos del menú desplegable */
+    color: #4caf50;
 }
 
 .menu-toggle {
     display: none; /* Oculta el botón del menú hamburguesa en dispositivos grandes */
-    flex-direction: column; /* Alinea las barras verticalmente */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    flex-direction: column; 
+    cursor: pointer; 
 }
 
 .menu-toggle .bar {
-    height: 3px; /* Altura de las barras */
-    width: 25px; /* Ancho de las barras */
-    background-color: #333; /* Color de las barras */
-    margin: 4px 0; /* Espaciado entre las barras */
+    height: 3px; 
+    width: 25px; 
+    background-color: #333; 
+    margin: 4px 0; 
 }
 
 /* Ajustes para pantallas más pequeñas */
 @media (max-width: 768px) {
     .nav-list {
-        display: none; /* Oculta la lista de navegación por defecto */
-        flex-direction: column; /* Alinea los elementos verticalmente */
-        width: 100%; /* Ancho completo */
-        position: absolute; /* Posiciona el menú en relación a la navegación */
-        background-color: #fff; /* Color de fondo del menú desplegable */
-        top: 60px; /* Coloca el menú debajo del menú hamburguesa */
-        left: 0; /* Alinea el menú a la izquierda */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del menú desplegable */
+        display: none; 
+        flex-direction: column; 
+        width: 100%;
+        position: absolute; 
+        background-color: #fff; 
+        top: 60px; 
+        left: 0; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .nav-list.active {
@@ -106,12 +110,12 @@ nav {
     }
 
     .nav-list li {
-        margin: 10px 0; /* Espaciado entre elementos */
-        text-align: center; /* Centra el texto */
+        margin: 10px 0; 
+        text-align: center; 
     }
 
     .menu-toggle {
-        display: flex; /* Muestra el botón del menú hamburguesa en dispositivos pequeños */
+        display: flex; /* Muestra el botón de menú hamburguesa en pantallas pequeñas */
     }
 }
 
