@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruver Mockup</title>
+    <link rel="stylesheet" href="Fruteria.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <h1>Fruver</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Páginas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="#"><img src="cart-icon.png" alt="Cart"></a>
+            <a href="#"><img src="user-icon.png" alt="User"></a>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <p>100% Organic Foods</p>
+            <h2>Organic Veggies & Fruits Foods</h2>
+            <input type="text" placeholder="Search">
+            <button>Submit Now</button>
+        </div>
+        <div class="banner-image">
+            <img src="banner-image.webp" alt="Fruver Banner">
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services">
+        <div class="service">
+            <img src="free-shipping-icon.png" alt="Free Shipping">
+            <p>Free Shipping</p>
+        </div>
+        <div class="service">
+            <img src="security-icon.png" alt="Security Payment">
+            <p>Security Payment</p>
+        </div>
+        <div class="service">
+            <img src="return-icon.png" alt="30 Day Return">
+            <p>30 Day Return</p>
+        </div>
+        <div class="service">
+            <img src="support-icon.png" alt="Support">
+            <p>24/7 Support</p>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="products">
+        <h2>Productos Orgánicos</h2>
+        <div class="filter-buttons">
+            <button onclick="filterProducts('all')">Todos los Productos</button>
+            <button onclick="filterProducts('vegetales')">Vegetales</button>
+            <button onclick="filterProducts('frutas')">Frutas</button>
+            <button onclick="filterProducts('pan')">Pan de cereales</button>
+        </div>
+        <div class="product-grid">
+            <div class="product-card" data-category="frutas">
+                <img src="Uva.jpg" alt="Grapes">
+                <div class="product-info">
+                    <h3>Grapes</h3>
+                    <p>$4.99 / kg</p>
+                    <button">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="frutas">
+                <img src="Uva.jpg" alt="Bananas">
+                <div class="product-info">
+                    <h3>Grapes</h3>
+                    <p>$2.99 / kg</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="frutas">
+                <img src="Raspberry.jpeg" alt="Oranges">
+                <div class="product-info">
+                    <h3>Raspberries</h3>
+                    <p>$3.49 / kg</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetales">
+                <img src="lettuce.jpg" alt="Lettuce">
+                <div class="product-info">
+                    <h3>Lechuga</h3>
+                    <p>$1.99 / kg</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetales">
+                <img src="tomato.jpg" alt="Tomato">
+                <div class="product-info">
+                    <h3>Tomate</h3>
+                    <p>$2.49 / kg</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetales">
+                <img src="carrots.jpg" alt="Carrots">
+                <div class="product-info">
+                    <h3>Zanahorias</h3>
+                    <p>$1.79 / kg</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="pan">
+                <img src="bread.jpg" alt="Bread">
+                <div class="product-info">
+                    <h3>Pan de cereales</h3>
+                    <p>$4.99 / barra</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Fruver. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="Fruteria.js"></script>
+</body>
+</html>

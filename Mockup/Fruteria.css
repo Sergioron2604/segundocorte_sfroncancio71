@@ -1,0 +1,261 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: ghostwhite;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    color: #8DC63F;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.icons a img {
+    width: 24px;
+    margin-left: 10px;
+}
+
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    background-color: ghostwhite;
+    padding: 40px;
+    color: #78be20;
+    margin: 0 20px;
+    max-width: 100%;
+}
+
+.banner-content {
+    max-width: 50%;
+}
+
+.banner-content h2 {
+    font-size: 2.5rem;
+}
+
+.banner-content p {
+    font-size: 1.8rem;
+    color: orange;
+}
+
+.banner-content input {
+    padding: 10px;
+    margin-top: 0;
+    border: 2px solid orange;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    width: 70%; /* Ajuste para ancho responsivo */
+}
+
+.banner-content button {
+    padding: 12px;
+    background-color: #78be20;
+    color: #fff;
+    border: 2px solid orange;
+    border-radius: 0 25px 25px 0;
+    border-left: none;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.banner-image img {
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.service img {
+    width: 40px;
+    display: block;
+    margin: 0 auto;
+}
+
+.service p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.products {
+    padding: 40px;
+}
+
+.product-card button{
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+.filter-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: solid 1px orange;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    margin-bottom: 10px;
+}
+
+/* Responsive: Ajuste para pantallas medianas */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ajustes para tablets */
+@media (max-width: 768px) {
+    .banner {
+        grid-template-columns: 1fr; /* Elimina la grilla en móviles */
+        padding: 20px;
+    }
+
+    .banner-content {
+        max-width: 100%;
+    }
+
+    .banner-content h2 {
+        font-size: 2rem; /* Reducir tamaño de fuente en móviles */
+    }
+
+    .banner-content p {
+        font-size: 1.5rem;
+    }
+
+    .banner-content input, .banner-content button {
+        width: 100%; /* Ajuste de ancho completo en móviles */
+        margin-top: 10px;
+        border-radius: 25px; /* Botón e input redondeados por completo */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .banner-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .banner-content p {
+        font-size: 1.2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+        gap: 10px;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service img {
+        width: 30px;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
