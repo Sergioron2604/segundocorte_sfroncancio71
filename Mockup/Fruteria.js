@@ -15,5 +15,8 @@ function filterProducts(category) {
         } else {
             product.style.display = 'none'; // Ocultar producto
         }
+
+        
     });
+    
 }

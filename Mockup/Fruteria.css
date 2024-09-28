@@ -17,43 +17,84 @@ header {
 
 .logo h1 {
     color: #8DC63F;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
     margin: 0;
 }
 
+nav {
+    background-color: #fff; /* Color de fondo del menú */
+    padding: 10px 20px; /* Espaciado del menú */
+}
+
+nav ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0; /* Quita el padding de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos */
+}
+
 nav ul li {
-    margin-right: 20px;
+    position: relative; /* Posicionamiento relativo para el menú desplegable */
+    margin-right: 20px; /* Espaciado entre elementos */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #333;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: #333; /* Color de texto por defecto */
+    padding: 8px 15px; /* Espaciado interno */
+    transition: color 0.3s; /* Transición suave para el cambio de color */
 }
+
+nav ul li a:hover {
+    color: #4caf50; /* Color verde al pasar el cursor */
+}
+
+.dropdown-menu {
+    display: none; /* Oculta el menú desplegable por defecto */
+    position: absolute; /* Posiciona el menú desplegable */
+    top: 100%; /* Coloca el menú justo debajo del enlace */
+    left: 0; /* Alinea el menú a la izquierda */
+    background-color: #fff; /* Color de fondo del menú desplegable */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del menú desplegable */
+    border-radius: 5px; /* Bordes redondeados del menú desplegable */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.dropdown-menu li {
+    margin: 0; /* Quita el margen */
+}
+
+.dropdown-menu li a {
+    color: #333; /* Color de texto de los elementos del menú desplegable */
+    padding: 10px 15px; /* Espaciado interno de los elementos del menú desplegable */
+    display: block; /* Hace que el área clickeable sea más grande */
+}
+
+.dropdown-menu li a:hover {
+    color: #4caf50; /* Color verde al pasar el cursor sobre los elementos del menú desplegable */
+}
+
+nav ul li:hover .dropdown-menu {
+    display: block; /* Muestra el menú desplegable al pasar el cursor */
+}
+
 
 .icons a img {
     width: 24px;
     margin-left: 10px;
 }
 
+/* Banner Section */
 .banner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
     align-items: center;
     background-color: ghostwhite;
     padding: 40px;
     color: #78be20;
     margin: 0 20px;
-    max-width: 100%;
 }
 
 .banner-content {
-    max-width: 50%;
+    max-width: 90%;
 }
 
 .banner-content h2 {
@@ -67,12 +108,11 @@ nav ul li a {
 
 .banner-content input {
     padding: 10px;
-    margin-top: 0;
     border: 2px solid orange;
     border-right: none;
     border-radius: 25px 0 0 25px;
     outline: none;
-    width: 70%; /* Ajuste para ancho responsivo */
+    width: 70%;
 }
 
 .banner-content button {
@@ -83,7 +123,6 @@ nav ul li a {
     border-radius: 0 25px 25px 0;
     border-left: none;
     cursor: pointer;
-    margin-top: 0;
 }
 
 .banner-image img {
@@ -91,6 +130,7 @@ nav ul li a {
     border-radius: 1.5rem;
 }
 
+/* Services Section */
 .services {
     display: flex;
     justify-content: space-around;
@@ -109,19 +149,12 @@ nav ul li a {
     margin-top: 10px;
 }
 
+/* Products Section */
 .products {
     padding: 40px;
+    background-color: ghostwhite;
 }
 
-.product-card button{
-    margin-right: 10px;
-    padding: 10px 20px;
-    background-color: orange;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 2rem;
-}
 .filter-buttons {
     display: flex;
     justify-content: flex-end;
@@ -142,7 +175,6 @@ nav ul li a {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
     gap: 20px;
-    padding: 20px;
 }
 
 .product-card {
@@ -172,7 +204,19 @@ nav ul li a {
     margin-bottom: 10px;
 }
 
-/* Responsive: Ajuste para pantallas medianas */
+
+.product-card button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: ghostwhite;
+    border: none;
+    color: #78be20;
+    cursor: pointer;
+    border-radius: 2rem;
+    border: 2px solid orange;
+}
+
+/* Responsive: Pantallas medianas */
 @media (max-width: 1024px) {
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -191,7 +235,7 @@ nav ul li a {
     }
 
     .banner-content h2 {
-        font-size: 2rem; /* Reducir tamaño de fuente en móviles */
+        font-size: 2rem;
     }
 
     .banner-content p {
@@ -199,9 +243,9 @@ nav ul li a {
     }
 
     .banner-content input, .banner-content button {
-        width: 100%; /* Ajuste de ancho completo en móviles */
+        width: 100%;
         margin-top: 10px;
-        border-radius: 25px; /* Botón e input redondeados por completo */
+        border-radius: 25px;
     }
 
     .product-grid {
